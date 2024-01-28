@@ -10,7 +10,7 @@ function add(number1, number2)
 function addNumbers() {
     let num1 = parseInt(document.querySelector("#add1").value);
     let num2 = parseInt(document.querySelector("#add2").value);
-    document.getElementById("sum").value = add(num1, num2);
+    document.getElementById(sum).value = add(num1, num2);
 }
 
 document.getElementById("addNumbers").addEventListener('click', addNumbers);
@@ -50,14 +50,19 @@ document.getElementById("divideNumbers").addEventListener('click', divideNumbers
 
 
 /* Decision Structure */
+function getTotal()
+{
+   let userInput = prompt("what is your due total") 
 
+}
+document.querySelector("#getToal").addEventListener('click',numberTotal);
 
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
 // Step 1: Declare and instantiate an array variable to hold the numbers 1 through 25
 const array_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, ];
 // Step 2: Assi[gn the value of the array variable to the HTML element with an ID of "array"
-document.getElementById("array").innerHTML = array_1;
+document.querySelector("#array").innerHTML = array_1;
 // Step 3: Use the filter array method to find all of the odd numbers of the array variable and assign the reult to the HTML element with an ID of "odds" ( hint: % (modulus operartor) )
 document.getElementById("odds").innerHTML = array_1.filter(oddNumbers);
 
