@@ -4,65 +4,63 @@
 /* Function Definition - Add Numbers */
 function add(number1, number2)
 {
-    return number1 + number2;
+    return number1+number2;
 }
-
-function addNumbers() {
-    let num1 = parseInt(document.querySelector("#add1").value);
-    let num2 = parseInt(document.querySelector("#add2").value);
-    document.getElementById(sum).value = add(num1, num2);
+function  addNumbers()
+{
+    let num1 = Number(document.querySelector("#add1").value);
+    let num2 = Number(document.querySelector("#add2").value);
+    let sum = add(num1,num2);
+    document.querySelector("#sum").value = sum;   
 }
+document.querySelector("#addNumbers").addEventListener("click", addNumbers);
 
-document.getElementById("addNumbers").addEventListener('click', addNumbers);
 /* Function Expression - Subtract Numbers */
-let subtract = funtion(number3, number4)
+let subtract = function(number3, number4)
 {
     return number3 - number4;
 }
-
 let subtractNumbers = function()
 {
-    let num3 = parseInt(document.querySelector("#subtract1").value);
-    let num4 = parseInt(document.querySelector("#subtract2").value);
-    document.getElementById("difference").value = subtract(num3, num4);  
+    let num3 = Number(document.querySelector("#subtract1").value);
+    let num4 = Number(document.querySelector("#subtract2").value);
+    let difference = subtract(num3, num4);
+    document.querySelector("#difference").value = difference;
 }
+document.querySelector("#subtractNumbers").addEventListener("click", subtractNumbers);
 /* Arrow Function - Multiply Numbers */
-multiply = (number5, number6) => number5 * number6;
-multiplyNumbers = () => {
-    let num5 = Number(document.querySelector("#factor1").value);
-    let num6 = Number(document.querySelector("#factor2").value);
-    document.getElementById("product").value = multiply(num5, num6);
+let multiply = (factor1, factor2) => factor1 * factor2;
+let multiplyNumbers =  () => {
+    let num5 = document.getElementById('factor1').value;
+    let num6 = document.getElementById('factor2').value;
+    let product = num5 * num6;
+    document.querySelector("#product").value = product;
 }
-document.getElementById("multiplyNumbers").addEventListener('click', multiplyNumbers);
-
+document.querySelector("#multiplyNumbers").addEventListener("click", multiplyNumbers);
 
 /* Open Function Use - Divide Numbers */
-function divide(number7, number8) {
-    return number7 / number8;
+const divide = (number1, number2) => number1 / number2;
+
+const divideNumbers = () => {
+    let num7 = document.getElementById('dividend').value;
+    let num8 = document.getElementById('divisor').value;
+    let quotient = num7 / num8
+    document.querySelector("#quotient").value = quotient;
 }
-
-function divideNumbers() {
-    let num7 = parseInt(document.querySelector("#dividend").value);
-    let num8 = parseInt(document.querySelector("#divisor").value);
-    document.getElementById("quotient").value = divide(num7, num8);
-}
-document.getElementById("divideNumbers").addEventListener('click', divideNumbers);
-
-
+document.querySelector("#divideNumbers").addEventListener("click", divideNumbers)
 /* Decision Structure */
-function getTotal()
-{
-   let userInput = prompt("what is your due total") 
-
-}
-document.querySelector("#getToal").addEventListener('click',numberTotal);
+// let total = function()
+// {
+//     let number = Number(document.querySelector("#subtoatal").value);
+// }
+// document.querySelector("#gettotal").addEventListener("",)
 
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
-// Step 1: Declare and instantiate an array variable to hold the numbers 1 through 25
-const array_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, ];
+// Step 1: Declare and instantiate an array variable to hold the numbers 1 through 13
+const array_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 // Step 2: Assi[gn the value of the array variable to the HTML element with an ID of "array"
-document.querySelector("#array").innerHTML = array_1;
+document.getElementById("array").innerHTML = array_1;
 // Step 3: Use the filter array method to find all of the odd numbers of the array variable and assign the reult to the HTML element with an ID of "odds" ( hint: % (modulus operartor) )
 document.getElementById("odds").innerHTML = array_1.filter(oddNumbers);
 
