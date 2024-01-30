@@ -49,11 +49,21 @@ const divideNumbers = () => {
 }
 document.querySelector("#divideNumbers").addEventListener("click", divideNumbers)
 /* Decision Structure */
-// let total = function()
-// {
-//     let number = Number(document.querySelector("#subtoatal").value);
-// }
-// document.querySelector("#gettotal").addEventListener("",)
+function getTotal()
+{
+    let subtotal = Number(document.getElementById("subtotal").value);
+    let membership = document.getElementById("member").checked;
+    if (membership) 
+    {
+        subtotal = subtotal * 0.8; // Apply 20% discount
+    }
+    let total = document.getElementById("total").innerHTML(subtotal.toFixed(2));
+    return total;
+    
+
+}
+document.querySelector("#getTotal").addEventListener("click", getTotal);
+
 
 /* ARRAY METHODS - Functional Programming */
 /* Output Source Array */
