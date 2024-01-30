@@ -49,20 +49,24 @@ const divideNumbers = () => {
 }
 document.querySelector("#divideNumbers").addEventListener("click", divideNumbers)
 /* Decision Structure */
-function getTotal()
-{
-    let subtotal = Number(document.getElementById("subtotal").value);
-    let membership = document.getElementById("member").checked;
-    if (membership) 
-    {
-        subtotal = subtotal * 0.8; // Apply 20% discount
-    }
-    let total = document.getElementById("total").innerHTML(subtotal.toFixed(2));
-    return total;
-    
+function calculateTotal() {
+    // Get user input from the subtotal field
+    const subtotalInput = document.getElementById('subtotal');
+    const subtotal = parseFloat(subtotalInput.value) || 0; // Convert input to a numeric value, default to 0 if not a valid number
 
+    // Check if the membership checkbox is checked
+    const membershipCheckbox = document.getElementById('member');
+    const applyDiscount = membershipCheckbox.checked;
+
+    // Apply discount if membership is checked
+    const discount = applyDiscount ? 0.2 : 0; // 20% discount if checked, 0% otherwise
+    const discountedTotal = subtotal * (1 - discount);
+
+    // Output the total to the total span with two decimals using a template string
+    const totalSpan = document.getElementById('total');
+    totalSpan.textContent = `Total: $${discountedTotal.toFixed(2)}`;
 }
-document.querySelector("#getTotal").addEventListener("click", getTotal);
+document.querySelector("#getTotal").addEventListener("click",calculateTotal);
 
 
 /* ARRAY METHODS - Functional Programming */
