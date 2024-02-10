@@ -6,30 +6,31 @@ let myProfile = {
     name : "Melvinensah Bunduka",
     photo : "images/FBimg.jpg",
     favoriteFoods : ["rice and krain-krain","jelly","foo-foo","friedrice and chicken"],
-    hobbies : ["playiing football","watching footabll match","scriptur study"],
-    placesLived : [],
+    hobbies : ["playiing football","watching footabll match","scripture study"],
+    placesLived : []
 }
 
 
 /* Populate Profile Object with placesLive objects */
-myProfile.placesLived.push= [
+
+myProfile.placesLived.push(
 {
     place: "Bo City",
-    timeLived: 4
+    length: "4 years"
 },
 {
     place: "Kailahun",
-    timeLived: 7
+    length: "7 years"
 },
 {
     place: "Liberia",
-    timeLived: 5
+    length: "5 Years"
 },
 {
     place: "Kambia",
-    timeLived: 1
+    length: "1 year"
 },
-];
+);
 
 
 
@@ -43,6 +44,7 @@ document.getElementById("name").innerHTML=myProfile.name;
 /* Photo with attributes */
 photo_out = document.getElementById("photo")
 photo_out.setAttribute("src", myProfile.photo);
+
 
 
 /* Favorite Foods List*/
@@ -67,12 +69,13 @@ for (let i = 0; i < hobbiesList.length; i++) {
 
 /* Places Lived DataList */
 
-let placesOut = "";
-place = myProfile.placesLived
-place.forEach(countPlaces)
+const placesLivedList = document.getElementById("places-lived");
+myProfile.placesLived.forEach(place => {
+    const dt = document.createElement("dt");
+    dt.textContent = place.place;
+    placesLivedList.appendChild(dt);
 
-document.getElementById("places-lived").innerHTML = placesOut;
-
-function countPlaces(place) {
-    placesOut += "<dt>" + place.place + "</dt>" + "<dd>" + place.timeLived + " years" + "</dt>";
-}
+    const dd = document.createElement("dd");
+    dd.textContent = place.length;
+    placesLivedList.appendChild(dd);
+});
