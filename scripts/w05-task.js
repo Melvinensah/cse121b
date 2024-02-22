@@ -27,8 +27,6 @@ const displayTemples = (temples) => {
         document.querySelector("#temples").appendChild(article);
 
     });
-
-
 }
 
 
@@ -38,7 +36,7 @@ let getTemples = async () => {
     templeList = await response.json();
     displayTemples(templeList);
 };
-getTemples();
+
 
 /* reset Function */
 const reset = () => {
@@ -76,6 +74,14 @@ const filterTemples = (temples) => {
         // Handle other cases if needed
         break;
     }
-  };
+};
   /* Event Listener */
-document.querySelector("#sortBy").addEventListener("change", sortBy);
+// Get the HTML element with the ID of "filtered"
+const filteredDropdown = document.querySelector('#filtered');
+
+// Add a change event listener to the filteredDropdown element
+filteredDropdown.addEventListener('change', () => {
+  // Call the filterTemples function and pass the templeList as an argument
+  filterTemples(templeList);
+});
+getTemples();
