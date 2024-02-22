@@ -2,7 +2,7 @@
 
 /* Declare and initialize global variables */
 
-const templesElement = document.querySelector('#temples-div');
+const templesElement = document.querySelector('#temples');
 
 let templeList = [];
 
@@ -17,14 +17,14 @@ const displayTemples = (temples) => {
         header3.innerHTML = temple.templeName;
 
         let templeImage = document.createElement("img")
-        templeImage.setAttribute("src", temple.imageUrl)
-        templeImage.setAttribute("alt", temple.location)
+        templeImage.src = temple.imageUrl
+        templeImage.alt = temple.location
 
 
         article.appendChild(header3);
         article.appendChild(templeImage);
 
-        document.querySelector("#temples").appendChild(article);
+        templesElement.appendChild(article);
 
     });
 }
@@ -32,7 +32,7 @@ const displayTemples = (temples) => {
 
 /* async getTemples Function using fetch()*/
 let getTemples = async () => {
-    let response = await fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json");
+    let response = await fetch("https://byui-cse.github.io/cse121b-ww-course/resources/temples.json");
     templeList = await response.json();
     displayTemples(templeList);
 };
