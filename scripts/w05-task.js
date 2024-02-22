@@ -42,8 +42,10 @@ getTemples();
 
 /* reset Function */
 const reset = () => {
-    document.querySelector("#temples").innerHTML = "";
+    // Clear all <article> elements from the templesElement
+    templesElement.innerHTML = '';
 };
+  
 /* filterTemples Function */
 const filterTemples = (temples) => {
     // Call the reset function to clear the output
